@@ -28,7 +28,11 @@ ActiveRecord::StatementInvalid: Mysql2::Error: Index column size too large. The 
 
 ## Setup
 
+This project has a single model `Widget` that has a single field `token` that stores a string of max length 255. The `widgets` table has a unique index truncated to 191, so certain values will cause collision errors and insertion failures. Here's how to reproduce it:
+
 1. Clone the repository
 2. `bundle exec rake db:create db:migrate db:seed`
 3. Checkout the `fix_index` branch
 4. Run `bundle exec db:collision_test` to see a collision
+
+
