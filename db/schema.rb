@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815182708) do
+ActiveRecord::Schema.define(version: 20170815195320) do
 
   create_table "widgets", force: :cascade do |t|
     t.string   "token",      limit: 255
@@ -19,6 +19,6 @@ ActiveRecord::Schema.define(version: 20170815182708) do
     t.datetime "updated_at",             null: false
   end
 
-  add_index "widgets", ["token"], name: "index_widgets_on_token", unique: true, length: {"token"=>191}, using: :btree
+  add_index "widgets", ["token"], name: "index_widgets_on_token", unique: true, using: :btree
 
 end
